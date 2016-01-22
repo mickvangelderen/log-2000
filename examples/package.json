@@ -1,0 +1,7 @@
+{
+	"name": "log-2000-examples",
+	"private": true,
+	"dependencies": {
+		"log-2000": "^0.1.0"
+	}
+}

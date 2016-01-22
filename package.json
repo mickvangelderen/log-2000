@@ -1,0 +1,26 @@
+{
+  "name": "log-2000",
+  "version": "0.1.0",
+  "description": "Definitely the best logging utility...",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha \"{src,test}/**/*.test.js\" --compilers js:babel-register",
+    "clean": "rm -r lib",
+    "build": "npm run clean && babel src --out-dir lib --ignore \"**/*.test.js\"",
+    "preversion": "npm run test && npm run build"
+  },
+  "keywords": [],
+  "author": "Mick van Gelderen",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.3.26",
+    "babel-cli": "^6.4.5",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-preset-es2015-node4": "^2.0.3",
+    "babel-register": "^6.4.3",
+    "eslint-plugin-babel": "^3.0.0",
+    "eslint_d": "^2.4.0",
+    "mocha": "^2.3.4",
+    "must": "^0.13.1"
+  }
+}
