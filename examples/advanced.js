@@ -50,10 +50,9 @@ const log = Log({
 
 // Test it out. 
 log.info({ firstName: 'Mick', passion: 'Creating useless node modules' })
-// {"level":"info","date":"2016-01-22T15:32:31.663Z","data":{"firstName":"Mick","passion":"Creating useless node modules"}}
-
 log.herp({ message: 'About to overheat!' })
-// {"level":"herp","date":"2016-01-22T15:32:31.663Z","message":"About to overheat!","data":{}}
-
 log.derp({ error: new Error('Failed to fetch user'), user: { id: '32jf90f23m' } })
-// {"level":"derp","date":"2016-01-22T15:32:31.663Z","message":"Failed to fetch user","data":{"user":{"id":"32jf90f23m"},"stack":"Error: Fai"}}
+
+// {"level":"info","date":"2016-01-22T16:43:19.875Z","data":{"firstName":"Mick","passion":"Creating useless node modules"}}
+// {"level":"herp","date":"2016-01-22T16:43:19.891Z","message":"About to overheat!","data":{}}
+// {"level":"derp","date":"2016-01-22T16:43:19.891Z","message":"Failed to fetch user","data":{"user":{"id":"32jf90f23m"},"stack":"Error: Fai"}}
