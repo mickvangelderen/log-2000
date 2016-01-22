@@ -3,8 +3,8 @@ import Log from '../src'
 // Writes messages to the console. 
 const consoleWriter = (level, message) => {
 	switch(level) {
-		case 'warning': return console.warn(message)
-		case 'error': return console.error(message)
+		case 'herp': return console.warn(message)
+		case 'derp': return console.error(message)
 		default: return console.log(message)
 	}
 }
@@ -44,15 +44,16 @@ const log = Log({
 	writers: [ consoleWriter ],
 	transformers: [ errorTransformer ],
 	decorators: [ dateDecorator, messageDecorator, dataDecorator ],
-	serializers: [ jsonSerializer ]
+	serializers: [ jsonSerializer ],
+	levels: [ 'info', 'herp', 'derp' ]
 })
 
 // Test it out. 
 log.info({ firstName: 'Mick', passion: 'Creating useless node modules' })
 // {"level":"info","date":"2016-01-22T15:32:31.663Z","data":{"firstName":"Mick","passion":"Creating useless node modules"}}
 
-log.warning({ message: 'About to overheat!' })
-// {"level":"warning","date":"2016-01-22T15:32:31.663Z","message":"About to overheat!","data":{}}
+log.herp({ message: 'About to overheat!' })
+// {"level":"herp","date":"2016-01-22T15:32:31.663Z","message":"About to overheat!","data":{}}
 
-log.error({ error: new Error('Failed to fetch user'), user: { id: '32jf90f23m' } })
-// {"level":"error","date":"2016-01-22T15:32:31.663Z","message":"Failed to fetch user","data":{"user":{"id":"32jf90f23m"},"stack":"Error: Fai"}}
+log.derp({ error: new Error('Failed to fetch user'), user: { id: '32jf90f23m' } })
+// {"level":"derp","date":"2016-01-22T15:32:31.663Z","message":"Failed to fetch user","data":{"user":{"id":"32jf90f23m"},"stack":"Error: Fai"}}

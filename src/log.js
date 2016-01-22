@@ -12,7 +12,8 @@ export function Log(options = {}) {
 		transformers = [ messageTransformer ],
 		decorators = [ messageDecorator, dataDecorator ],
 		serializers = [ jsonSerializer ],
-		writers = [ consoleWriter ]
+		writers = [ consoleWriter ],
+		levels = [ 'info', 'warning', 'error' ]
 	} = options
 	const log = level => (
 		data => {
@@ -22,11 +23,10 @@ export function Log(options = {}) {
 			writers.map(f => f(level, data))
 		}
 	)
-	return {
-		info: log('info'),
-		warning: log('warning'),
-		error: log('error')
-	}
+	return levels.reduce((instance, level) => {
+		instance[level] = log(level)
+		return instance
+	}, {})
 }
 
 export default Log
