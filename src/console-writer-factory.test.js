@@ -1,13 +1,13 @@
 /* eslint-env mocha */
-import consoleWriter from './console-writer'
+import ConsoleWriter from './console-writer-factory'
 import expect from 'must'
 
 describe(__filename, () => {
 	it('should expose a function', () => {
-		expect(consoleWriter).to.be.a.function()
+		expect(ConsoleWriter).to.be.a.function()
 	})
 
 	it('should return a function', () => {
-		expect(consoleWriter()).to.be.a.function()
+		expect(ConsoleWriter()).to.be.a.function()
 	})
 })

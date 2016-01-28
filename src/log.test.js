@@ -22,18 +22,31 @@ describe(__filename, () => {
 	})
 
 	it('should write messages to the writer', () => {
+		const attachLevel = (level, data) => Object.assign({ level }, data)
+		
 		let lastMessage = []
 		const cacheWriter = (level, data) => {
 			lastMessage = [ level, data ]
 		}
+
 		const log = Log({
+			transformers: [ attachLevel ],
 			writers: [ cacheWriter ]
 		})
-		log.info('hello')
-		expect(lastMessage).to.eql([ 'info', { level: 'info', message: 'hello' } ])
-		log.warning({ one: 1 })
+
+		const msg = { one: 1 }
+
+		log.info(msg)
+		expect(lastMessage).to.eql([ 'info', { level: 'info', one: 1 } ])
+
+		log.warning(msg)
 		expect(lastMessage).to.eql([ 'warning', { level: 'warning', one: 1 } ])
-		log.error({ message: 'This is not good!', user: 'Mick' })
-		expect(lastMessage).to.eql([ 'error', { level: 'error', message: 'This is not good!', user: 'Mick' } ])
+
+		log.error(msg)
+		expect(lastMessage).to.eql([ 'error', { level: 'error', one: 1 } ])
+
+		// Assert message is still intact. 
+		expect(msg).to.eql({ one: 1 })
 	})
+
 })

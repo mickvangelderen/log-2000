@@ -1,3 +1,3 @@
-const jsonSerializer = data => JSON.stringify(data)
+const jsonSerializer = (level, data) => JSON.stringify(data)
 
 export default jsonSerializer

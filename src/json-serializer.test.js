@@ -8,6 +8,6 @@ describe(__filename, () => {
 	})
 
 	it('should return a string', () => {
-		expect(jsonSerializer({ one: 1 })).to.eql('{"one":1}')
+		expect(jsonSerializer('warning', { one: 1 })).to.eql('{"one":1}')
 	})
 })
