@@ -23,17 +23,17 @@ describe(__filename, () => {
 
 	it('should write messages to the writer', () => {
 		let lastMessage = []
-		const cacheWriter = (level, message) => {
-			lastMessage = [ level, message ]
+		const cacheWriter = (level, data) => {
+			lastMessage = [ level, data ]
 		}
 		const log = Log({
 			writers: [ cacheWriter ]
 		})
 		log.info('hello')
-		expect(lastMessage).to.eql([ 'info', '{"level":"info","message":"hello"}' ])
+		expect(lastMessage).to.eql([ 'info', { level: 'info', message: 'hello' } ])
 		log.warning({ one: 1 })
-		expect(lastMessage).to.eql([ 'warning', '{"level":"warning","data":{"one":1}}' ])
+		expect(lastMessage).to.eql([ 'warning', { level: 'warning', one: 1 } ])
 		log.error({ message: 'This is not good!', user: 'Mick' })
-		expect(lastMessage).to.eql([ 'error', '{"level":"error","message":"This is not good!","data":{"user":"Mick"}}' ])
+		expect(lastMessage).to.eql([ 'error', { level: 'error', message: 'This is not good!', user: 'Mick' } ])
 	})
 })

@@ -1,25 +1,22 @@
-import consoleWriter from './console-writer'
-import dataDecorator from './data-decorator'
-import liftDecorator from './lift-decorator'
+import ConsoleWriter from './console-writer'
+import flattenDecorator from './flatten-decorator'
 import jsonSerializer from './json-serializer'
-import stringTransformer from './string-transformer'
+import StringTransformer from './string-transformer'
 
-const messageTransformer = stringTransformer('message')
-const messageDecorator = liftDecorator('message')
+const messageTransformer = StringTransformer('message')
+const consoleJsonWriter = ConsoleWriter({ serializer: jsonSerializer })
 
-export function Log(options = {}) {
+function Log(options = {}) {
 	const {
 		transformers = [ messageTransformer ],
-		decorators = [ messageDecorator, dataDecorator ],
-		serializers = [ jsonSerializer ],
-		writers = [ consoleWriter ],
+		decorators = [ flattenDecorator ],
+		writers = [ consoleJsonWriter ],
 		levels = [ 'info', 'warning', 'error' ]
 	} = options
 	const log = level => (
 		data => {
 			data = transformers.reduce((d, f) => f(d), data)
 			data = Object.assign({ level }, ...decorators.map(f => f(data)))
-			data = serializers.reduce((d, f) => f(d), data)
 			writers.map(f => f(level, data))
 		}
 	)

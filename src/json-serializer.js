@@ -1,3 +1,3 @@
-export const jsonTransformer = data => JSON.stringify(data)
+const jsonSerializer = data => JSON.stringify(data)
 
-export default jsonTransformer
+export default jsonSerializer

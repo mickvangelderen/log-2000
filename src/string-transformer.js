@@ -1,9 +1,7 @@
-export const stringTransformer = property => 
-	data => {
-		if (typeof data === 'string') {
-			return { [property]: data }
-		}
-		return data
-	}
+export const StringTransformer = property => 
+	data => 
+		typeof data === 'string' ?
+			{ [property]: data } :
+			data
 
-export default stringTransformer
+export default StringTransformer

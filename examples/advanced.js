@@ -1,4 +1,4 @@
-import Log from '../src'
+import Log from 'log-2000'
 
 // Writes messages to the console. 
 const consoleWriter = (level, message) => {

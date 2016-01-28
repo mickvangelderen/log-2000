@@ -1,4 +1,6 @@
-export const liftDecorator = property => 
+// Splits a property from the data.
+
+const LiftDecorator = property => 
 	data => {
 		if (property in data) {
 			const value = data[property]
@@ -8,4 +10,4 @@ export const liftDecorator = property =>
 		return {}
 	}
 
-export default liftDecorator
+export default LiftDecorator

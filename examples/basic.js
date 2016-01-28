@@ -1,4 +1,4 @@
-import Log from '../src'
+import Log from 'log-2000'
 
 // Create a logger. 
 const log = Log()
@@ -7,7 +7,9 @@ const log = Log()
 log.info('Hello.')
 log.warning({ firstName: 'Mick', status: 'About to overheat!' })
 log.error({ message: 'Stop!' })
+log.info({ level: 'alert', message: 'Overriding the level!' })
 
 // {"level":"info","message":"Hello."}
-// {"level":"warning","data":{"firstName":"Mick","status":"About to overheat!"}}
+// {"level":"warning","firstName":"Mick","status":"About to overheat!"}
 // {"level":"error","message":"Stop!"}
+// {"level":"alert","message":"Overriding the level!"}
