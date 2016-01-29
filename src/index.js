@@ -1,3 +1,3 @@
-import Log from './log'
+import Log from './log-factory'
 
 module.exports = Log

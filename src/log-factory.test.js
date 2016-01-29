@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 import expect from 'must'
-import Log from './log'
+import Log from './log-factory'
 
 describe(__filename, () => {
 	it('should expose a function', () => {
