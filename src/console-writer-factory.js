@@ -12,4 +12,4 @@ const ConsoleWriter = (options = {}) => {
 	}
 }
 
-export default ConsoleWriter
+module.exports = ConsoleWriter

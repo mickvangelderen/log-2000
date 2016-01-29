@@ -5,4 +5,4 @@ const attachLevel = AttachComputedProperty({
 	compute: level => level
 })
 
-export default attachLevel
+module.exports = attachLevel

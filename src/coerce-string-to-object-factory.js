@@ -4,4 +4,4 @@ const CoerceStringToObjectFactory = property =>
 			{ [property]: data } :
 			data
 
-export default CoerceStringToObjectFactory
+module.exports = CoerceStringToObjectFactory

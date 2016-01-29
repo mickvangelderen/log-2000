@@ -5,4 +5,4 @@ const attachDate = AttachComputedProperty({
 	compute: () => new Date()
 })
 
-export default attachDate
+module.exports = attachDate

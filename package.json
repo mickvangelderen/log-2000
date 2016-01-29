@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha \"{src,test}/**/*.test.js\" --compilers js:babel-register",
-    "clean": "rm -r lib",
+    "pull": "git pull && npm install",
+    "clean": "rm -rf lib",
     "build": "npm run clean && babel src --out-dir lib --ignore \"**/*.test.js\"",
     "preversion": "npm run test && npm run build"
   },

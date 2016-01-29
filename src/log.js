@@ -27,4 +27,4 @@ function Log(options = {}) {
 	}, {})
 }
 
-export default Log
+module.exports = Log

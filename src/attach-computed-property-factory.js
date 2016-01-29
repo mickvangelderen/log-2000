@@ -3,4 +3,4 @@ const AttachComputedProperty = (options = {}) => {
 	return (level, data) => Object.assign({ [property]: compute(level, data) }, data)
 }
 
-export default AttachComputedProperty
+module.exports = AttachComputedProperty

@@ -4,4 +4,4 @@ const CoerceAnythingToObjectFactory = property =>
 			{ [property]: data } :
 			data
 
-export default CoerceAnythingToObjectFactory
+module.exports = CoerceAnythingToObjectFactory

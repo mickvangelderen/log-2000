@@ -1,3 +1,3 @@
 import Log from './log'
 
-export default Log
+module.exports = Log
