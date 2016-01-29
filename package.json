@@ -1,6 +1,6 @@
 {
   "name": "log-2000",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Definitely the best logging utility...",
   "engines": {
     "node": "^4.2.4"
