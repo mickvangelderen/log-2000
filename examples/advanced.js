@@ -36,7 +36,3 @@ var log = Log({
 log.info({ firstName: 'Mick', passion: 'Creating useless node modules' })
 log.herp({ message: 'About to overheat!' })
 log.derp({ error: new Error('Failed to fetch user'), user: { id: '32jf90f23m' } })
-
-// {"level":"info","date":"2016-01-29T08:22:15.832Z","firstName":"Mick","passion":"Creating useless node modules"}
-// {"level":"herp","date":"2016-01-29T08:22:15.835Z","message":"About to overheat!"}
-// {"level":"derp","date":"2016-01-29T08:22:15.844Z","error":{"message":"Failed to fetch user","stack":"Error: Fai"},"user":{"id":"32jf90f23m"}}

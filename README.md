@@ -28,7 +28,7 @@ Will print
 
 # Examples
 
-Examples can be found [here](examples/). To play with them:
+Examples can be found [here](examples/). Play with them on [tonicdev.com/npm/log-2000](https://tonicdev.com/npm/log-2000) or locally by doing:
 
 ```bash
 git clone https://github.com/mickvangelderen/log-2000.git
