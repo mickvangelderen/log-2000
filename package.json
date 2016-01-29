@@ -34,7 +34,7 @@
     "type": "git",
     "url": "https://github.com/mickvangelderen/log-2000.git"
   },
-  "tonicExampleFilename": "examples/basic.js",
+  "tonicExample": "var Log = require('log-2000')\n\n// Create a logger. \nvar log = Log()\n\n// Test it out. \nlog.info('Hello.')\nlog.warning({ firstName: 'Mick', status: 'About to overheat!' })\nlog.error({ message: 'Stop!' })\n",
   "devDependencies": {
     "babel": "^6.3.26",
     "babel-cli": "^6.4.5",
