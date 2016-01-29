@@ -13,6 +13,7 @@
   "scripts": {
     "test": "mocha \"{src,test}/**/*.test.js\" --compilers js:babel-register",
     "pull": "git pull && npm install",
+    "push": "git push && git push --tags",
     "clean": "rm -rf lib",
     "build": "npm run clean && babel src --out-dir lib --ignore \"**/*.test.js\"",
     "preversion": "npm run test",
