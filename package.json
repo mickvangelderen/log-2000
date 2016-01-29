@@ -2,6 +2,9 @@
   "name": "log-2000",
   "version": "0.1.0",
   "description": "Definitely the best logging utility...",
+  "engines": {
+    "node": "^4.2.4"
+  },
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha \"{src,test}/**/*.test.js\" --compilers js:babel-register",
