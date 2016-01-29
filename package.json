@@ -11,13 +11,14 @@
     "examples": "./examples"
   },
   "scripts": {
-    "test": "mocha \"{src,test}/**/*.test.js\" --compilers js:babel-register",
+    "lint": "eslint \"src/**/*.js\"",
+    "test": "mocha \"src/**/*.test.js\" --compilers js:babel-register",
     "pull": "git pull && npm install",
     "push": "git push && git push --tags",
     "clean": "rm -rf lib",
-    "build": "npm run clean && babel src --out-dir lib --ignore \"**/*.test.js\"",
-    "preversion": "npm run test",
-    "postversion": "npm run build"
+    "build": "babel src --out-dir lib --ignore \"**/*.test.js\"",
+    "preversion": "npm run lint && npm run test",
+    "postversion": "npm run clean && npm run build"
   },
   "keywords": [
     "log",
