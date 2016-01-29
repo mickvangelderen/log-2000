@@ -1,6 +1,6 @@
 {
   "name": "log-2000",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Definitely the best logging utility...",
   "engines": {
     "node": "^4.2.4"
@@ -18,7 +18,14 @@
     "preversion": "npm run test",
     "postversion": "npm run build"
   },
-  "keywords": [ "log", "logging", "utility", "simple", "json", "minimal" ],
+  "keywords": [
+    "log",
+    "logging",
+    "utility",
+    "simple",
+    "json",
+    "minimal"
+  ],
   "author": "Mick van Gelderen",
   "license": "ISC",
   "devDependencies": {
