@@ -30,6 +30,10 @@
   ],
   "author": "Mick van Gelderen",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mickvangelderen/log-2000.git"
+  },
   "devDependencies": {
     "babel": "^6.3.26",
     "babel-cli": "^6.4.5",
